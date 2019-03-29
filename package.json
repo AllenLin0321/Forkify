@@ -1,0 +1,32 @@
+{
+  "name": "Forkify",
+  "version": "1.0.0",
+  "description": "Forkify",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllenLin0321/Forkify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AllenLin0321/Forkify/issues"
+  },
+  "homepage": "https://github.com/AllenLin0321/Forkify#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.0",
+    "jquery": "^3.3.1"
+  }
+}
