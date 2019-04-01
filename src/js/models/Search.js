@@ -1,6 +1,5 @@
 import axios from "axios";
-const proxy = "https://cors-anywhere.herokuapp.com/";
-const key = "231e0b9cfba44847c416f3948ddb16ca";    
+import { proxy, key } from '../config';
 
 export default class Search {
 
