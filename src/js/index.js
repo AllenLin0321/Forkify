@@ -18,7 +18,6 @@ const state = {};
 const controlSearch = async () => {
     // 1) Get query from view
     const query = searchView.getInput();
-    
 
     if (query) {
         // 2) New search object and add to state
@@ -49,6 +48,7 @@ elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
 });
+
 
 document.addEventListener('keypress', e => {
 
@@ -86,6 +86,8 @@ const controlRecipe = async () => {
         try {
             // Get recipe data
             await state.recipe.getRecipe();
+            state.recipe.parseIngredients();
+            // testing
     
             // calculate servings and time
             state.recipe.calcTime();
