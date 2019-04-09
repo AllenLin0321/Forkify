@@ -66,6 +66,7 @@ export default class Recipe {
 
                 // Ex. 4 cups
                 if(arrCount.length === 1) {
+                    // Ex. 1-1/2 cup Sugar
                     count = eval(arrIng[0].replace('-', '+'));
                 } else {
                     // Ex. 4 1/2 cups
@@ -73,7 +74,8 @@ export default class Recipe {
                 }
 
                 objIng = {
-                    count,
+                    // Equal count = count
+                    count, 
                     unit: arrIng[unitIndex],
                     ingredient: arrIng.slice(unitIndex + 1).join(' ')
                 };
