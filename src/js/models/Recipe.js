@@ -40,6 +40,7 @@ export default class Recipe {
 
             // 1. Uniform units
             let ingredient = el.toLowerCase();
+            
             unitsLong.forEach((unit, i) => {
                 ingredient = ingredient.replace(unit, unitsShort[i]);
             });
@@ -50,20 +51,25 @@ export default class Recipe {
             // 3. Parse ingredients into count, unit, and ingredient
             const arrIng = ingredient.split(' ');
 
-            // ?????????????????????????????
+            // Find the index of unit
             const unitIndex = arrIng.findIndex(el2 => unitsShort.includes(el2));
 
+            // Create a object to store count, unit and ingredient
             let objIng;
+
             if(unitIndex > -1) {
                 // There is a unit
                 // Ex. 4 1/2 cups, arrCount is [4, 1/2]  ---> eval("4+1/2") --> 4.5
                 // Ex. 4 cups, arrCount is [4]
                 const arrCount = arrIng.slice(0, unitIndex);
                 let count;
+
+                // Ex. 4 cups
                 if(arrCount.length === 1) {
                     count = eval(arrIng[0].replace('-', '+'));
                 } else {
-                    count = eval(arrIng.slice(0, unitIndex).joing('+'));
+                    // Ex. 4 1/2 cups
+                    count = eval(arrIng.slice(0, unitIndex).join('+'));
                 }
 
                 objIng = {
