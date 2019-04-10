@@ -13,6 +13,7 @@ export default class Likes {
         };
 
         this.likes.push(like);
+        return like;
     }
 
     deleteLike(id) {
